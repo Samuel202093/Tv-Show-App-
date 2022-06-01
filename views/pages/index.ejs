@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body>
+
+<nav>
+  <%- include('../partials/nav'); %>
+</nav>
+
+<section id="main">
+
+  <div class="movie">
+    <% if(showMovies != null) { %>
+      <% showMovies.forEach((x) => { %>
+      
+    <img src="https://image.tmdb.org/t/p/w500<%=x.poster_path %>" alt="<%= x.name %>">
+    
+    <div class="movie-info">
+      <h3><%= x.name %></h3>
+      <span class="green"><%= x.vote_average %></span>
+    </div>
+
+    <div class="overview"><%= x.overview %>
+      <h3>overview</h3>
+    </div>
+   
+  </div>
+
+  <div class="movie">
+    
+      
+    <img src="https://image.tmdb.org/t/p/w500<%=x.poster_path %>" alt="<%= x.name %>">
+    
+    <div class="movie-info">
+      <h3></h3>
+      <span class="green"></span>
+    </div>
+
+    <div class="overview">
+      <h3>overview</h3> <%= x.overview %>
+    </div>
+    <% }); %>
+    <% }; %>
+  </div>
+
+</section>
+  
+<footer>
+  <%- include('../partials/footer'); %>
+</footer>
+<script src="/js/app.js"></script>
+</body>
+</html>
+
+<%# commenting in Ejs %>
+
+
